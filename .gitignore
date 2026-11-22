@@ -1,7 +1,57 @@
-.venv/
+# Environment and credentials
 .env
+.env.*
+!.env.example
+.envrc
+
+# Python
 __pycache__/
 *.py[cod]
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.Python
+build/
+dist/
+*.manifest
+*.spec
+
+# Virtual environments and package managers
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.pdm-python
+.pdm-build/
+.pixi/
+__pypackages__/
+
+# IDE and tooling
+.vscode/
+.idea/
+.ruff_cache/
+.mypy_cache/
 .pytest_cache/
-data/*.db
-data/exports/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local data and databases
+*.db
+*.sqlite
+*.sqlite3
+*.rdb
+*.aof
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+tempCodeRunnerFile.py
+
+# OS
+.DS_Store
+Thumbs.db

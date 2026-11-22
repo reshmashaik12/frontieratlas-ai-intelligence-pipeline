@@ -1,6 +1,6 @@
-# FrontierAtlas Ingestion Pipeline
+# FrontierAtlas AI Intelligence Pipeline
 
-An async, source-backed ingestion pipeline for AI startups, products, research papers, 24-hour news, and jobs. The implementation never synthesizes records: every item must originate from a fetched page, feed, or official API.
+Async AI intelligence ingestion for startup and product candidates, research papers, 24-hour news, and jobs. Records retain their fetched source URLs; LLMs add only constrained classifications and do not create source records or fill missing facts.
 
 ## Setup
 
@@ -22,7 +22,7 @@ Regenerate `architecture.pdf` after editing `ARCHITECTURE.md` with `py -m pip in
 
 ## Implemented
 
-- Async aiohttp crawling with bounded concurrency and tenacity retries
+- Async aiohttp crawling with bounded concurrency; LLM providers use retry/backoff policies
 - RSS/Atom news and job collection with strict 24-hour filtering
 - arXiv paper collection and bounded-concurrency GitHub REST API star resolution
 - SQLite deduplicated storage with URL/content fingerprints
@@ -35,7 +35,7 @@ Regenerate `architecture.pdf` after editing `ARCHITECTURE.md` with `py -m pip in
 
 ## Data boundaries
 
-Startup and product records are derived from public GitHub repository metadata, not verified company directories; do not treat GitHub owners as validated startups. A GitHub token in `.env` is recommended because unauthenticated API quota is limited. Papers with absent or deleted repositories retain a null star count rather than an invented value.
+Startup and product records are derived from public GitHub repository metadata, not verified company directories; treat GitHub owners and repositories as candidates only. The current collector labels public GitHub repositories with `pricingModel=FREE`, which is not independently verified commercial pricing. A GitHub token in `.env` is recommended because unauthenticated API quota is limited. Papers with absent or deleted repositories retain a null star count rather than an invented value.
 
 Run `py -m src.main --validate-only` before submission. It reports structural/provenance checks and thresholds; it cannot prove that every source's claims are true or that an external URL remains live. Manually verify the GitHub-derived startup/product candidates before describing them as verified companies/products.
 
