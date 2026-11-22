@@ -1,0 +1,27 @@
+news:
+  - name: VentureBeat AI
+    url: https://venturebeat.com/category/ai/feed/
+  - name: TechCrunch AI
+    url: https://techcrunch.com/category/artificial-intelligence/feed/
+  - name: The Verge AI
+    url: https://www.theverge.com/rss/ai-artificial-intelligence/index.xml
+  - name: MIT Technology Review
+    url: https://www.technologyreview.com/feed/
+  - name: Ars Technica AI
+    url: https://feeds.arstechnica.com/arstechnica/technology-lab
+jobs:
+  - name: Anthropic Jobs
+    company: Anthropic
+    url: https://boards-api.greenhouse.io/v1/boards/anthropic/jobs
+  - name: Scale AI Jobs
+    company: Scale AI
+    url: https://boards-api.greenhouse.io/v1/boards/scaleai/jobs
+  - name: Databricks Jobs
+    company: Databricks
+    url: https://boards-api.greenhouse.io/v1/boards/databricks/jobs
+  - name: Together AI Jobs
+    company: Together AI
+    url: https://boards-api.greenhouse.io/v1/boards/togetherai/jobs
+  - name: Anduril Jobs
+    company: Anduril
+    url: https://boards-api.greenhouse.io/v1/boards/andurilindustries/jobs
